@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3A0389A1-75AC-4B00-89C9-BD29E147D5FB}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ConsoleApplicationOPC</RootNamespace>
+    <AssemblyName>ConsoleApplicationOPC</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Selectors" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Client\Browser.cs" />
+    <Compile Include="Client\DataDictionary.cs" />
+    <Compile Include="Client\Documentation\Opc.Ua.Client.cs" />
+    <Compile Include="Client\GlobalSuppressions.cs" />
+    <Compile Include="Client\MonitoredItem.cs" />
+    <Compile Include="Client\MonitoredItemStatus.cs" />
+    <Compile Include="Client\NodeCache.cs" />
+    <Compile Include="Client\Session.cs" />
+    <Compile Include="Client\SessionReconnectHandler.cs" />
+    <Compile Include="Client\Subscription.cs" />
+    <Compile Include="Core\Documentation\Opc.Ua.Bindings.cs" />
+    <Compile Include="Core\Documentation\Opc.Ua.Configuration.cs" />
+    <Compile Include="Core\Documentation\Opc.Ua.cs" />
+    <Compile Include="Core\Documentation\Opc.Ua.Schema.Binary.cs" />
+    <Compile Include="Core\Documentation\Opc.Ua.Schema.cs" />
+    <Compile Include="Core\Documentation\Opc.Ua.Schema.Xml.cs" />
+    <Compile Include="Core\Schema\ApplicationConfiguration.cs">
+      <DependentUpon>ApplicationConfiguration.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Schema\SecuredApplication.cs">
+      <DependentUpon>SecuredApplication.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Schema\SecuredApplicationHelpers.cs" />
+    <Compile Include="Core\Schema\UANodeSet.cs">
+      <DependentUpon>UANodeSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Schema\UANodeSetHelpers.cs" />
+    <Compile Include="Core\Security\AccessControl\AccessTemplateManager.cs" />
+    <Compile Include="Core\Security\AccessControl\ApplicationAccessRule.cs" />
+    <Compile Include="Core\Security\AccessControl\HttpAccessRule.cs" />
+    <Compile Include="Core\Security\AccessControl\UserRoleManager.cs" />
+    <Compile Include="Core\Security\Audit.cs" />
+    <Compile Include="Core\Security\Certificates\CertificateFactory.cs" />
+    <Compile Include="Core\Security\Certificates\CertificateIdentifier.cs" />
+    <Compile Include="Core\Security\Certificates\CertificateStoreIdentifier.cs" />
+    <Compile Include="Core\Security\Certificates\CertificateTrustList.cs" />
+    <Compile Include="Core\Security\Certificates\CertificateValidator.cs" />
+    <Compile Include="Core\Security\Certificates\DirectoryCertificateStore.cs" />
+    <Compile Include="Core\Security\Certificates\EncryptedData.cs" />
+    <Compile Include="Core\Security\Certificates\ICertificate.cs" />
+    <Compile Include="Core\Security\Certificates\ICertificateStore.cs" />
+    <Compile Include="Core\Security\Certificates\RsaUtils.cs" />
+    <Compile Include="Core\Security\Certificates\SecurityConfiguration.cs" />
+    <Compile Include="Core\Security\Certificates\Win32.cs" />
+    <Compile Include="Core\Security\Certificates\WindowsCertificateStore.cs" />
+    <Compile Include="Core\Security\Certificates\X509AuthorityKeyIdentifierExtension.cs" />
+    <Compile Include="Core\Security\Certificates\X509CRL.cs" />
+    <Compile Include="Core\Security\Certificates\X509SubjectAltNameExtension.cs" />
+    <Compile Include="Core\Security\Constants\SecurityConstants.cs" />
+    <Compile Include="Core\Security\Constants\SecurityPolicies.cs" />
+    <Compile Include="Core\SilverlightDefs.cs" />
+    <Compile Include="Core\Stack\Bindings\ArraySegmentStream.cs" />
+    <Compile Include="Core\Stack\Bindings\BaseBinding.cs" />
+    <Compile Include="Core\Stack\Bindings\BindingFactory.cs" />
+    <Compile Include="Core\Stack\Bindings\BufferManager.cs" />
+    <Compile Include="Core\Stack\Bindings\UaHttpsSoapBinding.cs" />
+    <Compile Include="Core\Stack\Bindings\UaSoapXmlBinding.cs" />
+    <Compile Include="Core\Stack\Bindings\UaSoapXmlOverPipeBinding.cs" />
+    <Compile Include="Core\Stack\Bindings\UaSoapXmlOverTcpBinding.cs" />
+    <Compile Include="Core\Stack\Bindings\UaTcpBinding.cs" />
+    <Compile Include="Core\Stack\Client\ClientBase.cs" />
+    <Compile Include="Core\Stack\Client\DiscoveryClient.cs" />
+    <Compile Include="Core\Stack\Client\IChannelBase.cs" />
+    <Compile Include="Core\Stack\Client\InvokeServiceMessage.cs" />
+    <Compile Include="Core\Stack\Client\IServiceRequest.cs" />
+    <Compile Include="Core\Stack\Client\IUserIdentity.cs" />
+    <Compile Include="Core\Stack\Client\RegistrationClient.cs" />
+    <Compile Include="Core\Stack\Client\SessionChannel.cs" />
+    <Compile Include="Core\Stack\Client\UserIdentity.cs" />
+    <Compile Include="Core\Stack\Client\WcfChannelBase.cs" />
+    <Compile Include="Core\Stack\Configuration\ApplicationConfiguration.cs" />
+    <Compile Include="Core\Stack\Configuration\ConfigurationWatcher.cs" />
+    <Compile Include="Core\Stack\Configuration\ConfiguredEndpoints.cs" />
+    <Compile Include="Core\Stack\Configuration\EndpointConfiguration.cs" />
+    <Compile Include="Core\Stack\Configuration\EndpointDescription.cs" />
+    <Compile Include="Core\Stack\Configuration\ISecurityConfigurationManager.cs" />
+    <Compile Include="Core\Stack\Configuration\SecurityConfigurationManager.cs" />
+    <Compile Include="Core\Stack\Configuration\ServerProperties.cs" />
+    <Compile Include="Core\Stack\Constants\ConditionStateNames.cs" />
+    <Compile Include="Core\Stack\Constants\DataTypes.Helpers.cs" />
+    <Compile Include="Core\Stack\Constants\Namespaces.cs" />
+    <Compile Include="Core\Stack\Constants\ReferenceTypes.Helpers.cs" />
+    <Compile Include="Core\Stack\Generated\Opc.Ua.Channels.cs" />
+    <Compile Include="Core\Stack\Generated\Opc.Ua.Classes.cs" />
+    <Compile Include="Core\Stack\Generated\Opc.Ua.Client.cs" />
+    <Compile Include="Core\Stack\Generated\Opc.Ua.Constants.cs" />
+    <Compile Include="Core\Stack\Generated\Opc.Ua.DataTypes.cs" />
+    <Compile Include="Core\Stack\Generated\Opc.Ua.Endpoints.cs" />
+    <Compile Include="Core\Stack\Generated\Opc.Ua.Interfaces.cs" />
+    <Compile Include="Core\Stack\Generated\Opc.Ua.Messages.cs" />
+    <Compile Include="Core\Stack\Generated\Opc.Ua.ServerBase.cs" />
+    <Compile Include="Core\Stack\Https\HttpsListener.cs" />
+    <Compile Include="Core\Stack\Https\HttpsTransportChannel.cs" />
+    <Compile Include="Core\Stack\Nodes\ContentFilter.cs" />
+    <Compile Include="Core\Stack\Nodes\IFilterTarget.cs" />
+    <Compile Include="Core\Stack\Nodes\INode.cs" />
+    <Compile Include="Core\Stack\Nodes\IOperationContext.cs" />
+    <Compile Include="Core\Stack\Nodes\Node.cs" />
+    <Compile Include="Core\Stack\Nodes\NodeSet.cs" />
+    <Compile Include="Core\Stack\Nodes\NodeTable.cs" />
+    <Compile Include="Core\Stack\Nodes\ReferenceTable.cs" />
+    <Compile Include="Core\Stack\Nodes\TypeTable.cs" />
+    <Compile Include="Core\Stack\Nodes\ViewTable.cs" />
+    <Compile Include="Core\Stack\Server\EndpointBase.cs" />
+    <Compile Include="Core\Stack\Server\IEndpointBase.cs" />
+    <Compile Include="Core\Stack\Server\IServerBase.cs" />
+    <Compile Include="Core\Stack\Server\NonHttpEndpoint.cs" />
+    <Compile Include="Core\Stack\Server\SecureChannelContext.cs" />
+    <Compile Include="Core\Stack\Server\ServerBase.cs" />
+    <Compile Include="Core\Stack\Server\ServiceHost.cs" />
+    <Compile Include="Core\Stack\Server\ServiceMessageContextBehaviorAttribute.cs" />
+    <Compile Include="Core\Stack\State\AcknowledgeableConditionState.cs" />
+    <Compile Include="Core\Stack\State\AlarmConditionState.cs" />
+    <Compile Include="Core\Stack\State\AuditEventState.cs" />
+    <Compile Include="Core\Stack\State\BaseEventState.cs" />
+    <Compile Include="Core\Stack\State\BaseInstanceState.cs" />
+    <Compile Include="Core\Stack\State\BaseInstanceStateSnapshot.cs" />
+    <Compile Include="Core\Stack\State\BaseObjectState.cs" />
+    <Compile Include="Core\Stack\State\BaseObjectTypeState.cs" />
+    <Compile Include="Core\Stack\State\BaseTypeState.cs" />
+    <Compile Include="Core\Stack\State\BaseVariableState.cs" />
+    <Compile Include="Core\Stack\State\BaseVariableTypeState.cs" />
+    <Compile Include="Core\Stack\State\ConditionState.cs" />
+    <Compile Include="Core\Stack\State\DataTypeState.cs" />
+    <Compile Include="Core\Stack\State\DialogConditionState.cs" />
+    <Compile Include="Core\Stack\State\ExclusiveLimitAlarmState.cs" />
+    <Compile Include="Core\Stack\State\ExclusiveLimitStateMachineState.cs" />
+    <Compile Include="Core\Stack\State\FiniteStateMachineState.cs" />
+    <Compile Include="Core\Stack\State\ISystemContext.cs" />
+    <Compile Include="Core\Stack\State\LimitAlarmState.cs" />
+    <Compile Include="Core\Stack\State\MethodState.cs" />
+    <Compile Include="Core\Stack\State\NodeBrowser.cs" />
+    <Compile Include="Core\Stack\State\NodeState.cs" />
+    <Compile Include="Core\Stack\State\NodeStateCollection.cs" />
+    <Compile Include="Core\Stack\State\NonExclusiveLimitAlarmState.cs" />
+    <Compile Include="Core\Stack\State\ProgramStateMachineState.cs" />
+    <Compile Include="Core\Stack\State\ReferenceTypeState.cs" />
+    <Compile Include="Core\Stack\State\ShelvedStateMachineState.cs" />
+    <Compile Include="Core\Stack\State\ViewState.cs" />
+    <Compile Include="Core\Stack\Tcp\TcpAsyncOperation.cs" />
+    <Compile Include="Core\Stack\Tcp\TcpChannel.Asymmetric.cs" />
+    <Compile Include="Core\Stack\Tcp\TcpChannel.cs" />
+    <Compile Include="Core\Stack\Tcp\TcpChannel.Rsa.cs" />
+    <Compile Include="Core\Stack\Tcp\TcpChannel.Symmetric.cs" />
+    <Compile Include="Core\Stack\Tcp\TcpChannelQuotas.cs" />
+    <Compile Include="Core\Stack\Tcp\TcpChannelToken.cs" />
+    <Compile Include="Core\Stack\Tcp\TcpClientChannel.cs" />
+    <Compile Include="Core\Stack\Tcp\TcpListener.cs" />
+    <Compile Include="Core\Stack\Tcp\TcpMessageSocket.cs" />
+    <Compile Include="Core\Stack\Tcp\TcpMessageType.cs" />
+    <Compile Include="Core\Stack\Tcp\TcpServerChannel.cs" />
+    <Compile Include="Core\Stack\Tcp\TcpTransportChannel.cs" />
+    <Compile Include="Core\Stack\Tcp\Wcf\BinaryEncodingMessageFormatter.cs" />
+    <Compile Include="Core\Stack\Tcp\Wcf\IBinaryEncodingCapabilities.cs" />
+    <Compile Include="Core\Stack\Tcp\Wcf\InvokeServiceBodyWriter.cs" />
+    <Compile Include="Core\Stack\Tcp\Wcf\IUaTcpSecureChannel.cs" />
+    <Compile Include="Core\Stack\Tcp\Wcf\StreamSecurityBindingElement.cs" />
+    <Compile Include="Core\Stack\Tcp\Wcf\UaTcpChannelFactory.cs" />
+    <Compile Include="Core\Stack\Tcp\Wcf\UaTcpChannelListener.cs" />
+    <Compile Include="Core\Stack\Tcp\Wcf\UaTcpReplyChannel.cs" />
+    <Compile Include="Core\Stack\Tcp\Wcf\UaTcpRequestChannel.cs" />
+    <Compile Include="Core\Stack\Tcp\Wcf\UaTcpTransportBindingElement.cs" />
+    <Compile Include="Core\Stack\Transport\AsyncResultBase.cs" />
+    <Compile Include="Core\Stack\Transport\ITransportChannel.cs" />
+    <Compile Include="Core\Stack\Transport\ITransportListener.cs" />
+    <Compile Include="Core\Stack\Transport\ITransportListenerCallback.cs" />
+    <Compile Include="Core\Stack\Transport\TransportChannelSettings.cs" />
+    <Compile Include="Core\Stack\Transport\TransportListenerSettings.cs" />
+    <Compile Include="Core\Stack\Types\Argument.cs" />
+    <Compile Include="Core\Stack\Types\BrowseDescription.cs" />
+    <Compile Include="Core\Stack\Types\BrowsePath.cs" />
+    <Compile Include="Core\Stack\Types\CallMethodRequest.cs" />
+    <Compile Include="Core\Stack\Types\ContentFilter.Evaluate.cs" />
+    <Compile Include="Core\Stack\Types\EUInformation.cs" />
+    <Compile Include="Core\Stack\Types\EventFieldList.cs" />
+    <Compile Include="Core\Stack\Types\HistoryReadValueId.cs" />
+    <Compile Include="Core\Stack\Types\HistoryUpdateDetails.cs" />
+    <Compile Include="Core\Stack\Types\MonitoredItemCreateRequest.cs" />
+    <Compile Include="Core\Stack\Types\MonitoredItemCreateResult.cs" />
+    <Compile Include="Core\Stack\Types\MonitoredItemModifyRequest.cs" />
+    <Compile Include="Core\Stack\Types\MonitoredItemNotification.cs" />
+    <Compile Include="Core\Stack\Types\MonitoringFilter.cs" />
+    <Compile Include="Core\Stack\Types\NotificationMessage.cs" />
+    <Compile Include="Core\Stack\Types\QueryDataSet.cs" />
+    <Compile Include="Core\Stack\Types\Range.cs" />
+    <Compile Include="Core\Stack\Types\ReadValueId.cs" />
+    <Compile Include="Core\Stack\Types\ReferenceDescription.cs" />
+    <Compile Include="Core\Stack\Types\ServiceFault.cs" />
+    <Compile Include="Core\Stack\Types\SoftwareCertficate.cs" />
+    <Compile Include="Core\Stack\Types\StatusResult.cs" />
+    <Compile Include="Core\Stack\Types\UserIdentityToken.cs" />
+    <Compile Include="Core\Stack\Types\UserTokenPolicy.cs" />
+    <Compile Include="Core\Stack\Types\VariableAttributes.cs" />
+    <Compile Include="Core\Stack\Types\ViewDescription.cs" />
+    <Compile Include="Core\Stack\Types\WriteValue.cs" />
+    <Compile Include="Core\Types\BuiltIn\AttributeValues.cs" />
+    <Compile Include="Core\Types\BuiltIn\BuiltInTypeCollections.cs" />
+    <Compile Include="Core\Types\BuiltIn\DataValue.cs" />
+    <Compile Include="Core\Types\BuiltIn\DiagnosticInfo.cs" />
+    <Compile Include="Core\Types\BuiltIn\DiagnosticMasks.cs" />
+    <Compile Include="Core\Types\BuiltIn\ExpandedNodeId.cs" />
+    <Compile Include="Core\Types\BuiltIn\ExtensionObject.cs" />
+    <Compile Include="Core\Types\BuiltIn\ITranslatableObject.cs" />
+    <Compile Include="Core\Types\BuiltIn\ITypeTable.cs" />
+    <Compile Include="Core\Types\BuiltIn\LocalizedText.cs" />
+    <Compile Include="Core\Types\BuiltIn\MessageContextExtension.cs" />
+    <Compile Include="Core\Types\BuiltIn\NodeId.cs" />
+    <Compile Include="Core\Types\BuiltIn\QualifiedName.cs" />
+    <Compile Include="Core\Types\BuiltIn\StatusCode.cs" />
+    <Compile Include="Core\Types\BuiltIn\Uuid.cs" />
+    <Compile Include="Core\Types\BuiltIn\Variant.cs" />
+    <Compile Include="Core\Types\Constants\Attributes.Helpers.cs" />
+    <Compile Include="Core\Types\Constants\StatusCodes.Helpers.cs" />
+    <Compile Include="Core\Types\Encoders\BinaryDecoder.cs" />
+    <Compile Include="Core\Types\Encoders\BinaryEncoder.cs" />
+    <Compile Include="Core\Types\Encoders\EncodableObject.cs" />
+    <Compile Include="Core\Types\Encoders\EncodeableFactory.cs" />
+    <Compile Include="Core\Types\Encoders\IDecoder.cs" />
+    <Compile Include="Core\Types\Encoders\IEncodable.cs" />
+    <Compile Include="Core\Types\Encoders\IEncoder.cs" />
+    <Compile Include="Core\Types\Encoders\XmlDecoder.cs" />
+    <Compile Include="Core\Types\Encoders\XmlEncoder.cs" />
+    <Compile Include="Core\Types\Generated\Opc.Ua.Attributes.cs" />
+    <Compile Include="Core\Types\Generated\Opc.Ua.StatusCodes.cs" />
+    <Compile Include="Core\Types\Schemas\BinarySchema.cs" />
+    <Compile Include="Core\Types\Schemas\BinarySchemaValidator.cs" />
+    <Compile Include="Core\Types\Schemas\OPCBinarySchema.cs">
+      <DependentUpon>OPCBinarySchema.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Types\Schemas\SchemaValidator.cs" />
+    <Compile Include="Core\Types\Schemas\XmlSchemaValidator.cs" />
+    <Compile Include="Core\Types\Utils\DataComparer.cs" />
+    <Compile Include="Core\Types\Utils\DataGenerator.cs" />
+    <Compile Include="Core\Types\Utils\HiResClock.cs" />
+    <Compile Include="Core\Types\Utils\Lock.cs" />
+    <Compile Include="Core\Types\Utils\NamespaceTable.cs" />
+    <Compile Include="Core\Types\Utils\NumericRange.cs" />
+    <Compile Include="Core\Types\Utils\ReadOnlyList.cs" />
+    <Compile Include="Core\Types\Utils\RelativePath.cs" />
+    <Compile Include="Core\Types\Utils\ServiceMessageContext.cs" />
+    <Compile Include="Core\Types\Utils\ServiceResult.cs" />
+    <Compile Include="Core\Types\Utils\ServiceResultException.cs" />
+    <Compile Include="Core\Types\Utils\TypeInfo.cs" />
+    <Compile Include="Core\Types\Utils\Utils.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Core\Schema\ApplicationConfiguration.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Core\Schema\AttributeIds.csv" />
+    <None Include="Core\Schema\BuildSchema.bat" />
+    <None Include="Core\Schema\NodeIds.csv" />
+    <None Include="Core\Schema\Opc.Ua.Endpoints.wsdl" />
+    <None Include="Core\Schema\Opc.Ua.Services.wsdl" />
+    <None Include="Core\Schema\Opc.Ua.StatusCodes.csv" />
+    <None Include="Core\Schema\Opc.Ua.Types.bsd" />
+    <None Include="Core\Schema\Opc.Ua.Types.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Core\Schema\SecuredApplication.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Core\Schema\UANodeSet.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Core\Schema\UAVariant.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Core\Stack\Generated\Opc.Ua.PredefinedNodes.uanodes" />
+    <None Include="Core\Types\Schemas\BuiltInTypes.bsd" />
+    <None Include="Core\Types\Schemas\OPCBinarySchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Core\Types\Schemas\StandardTypes.bsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Client\UA Client Library.csproj" />
+    <Content Include="Core\Schema\Opc.Ua.NodeSet.xml" />
+    <Content Include="Core\Schema\Opc.Ua.NodeSet2.xml" />
+    <Content Include="Core\Stack\Generated\Opc.Ua.NodeSet2.Part10.xml" />
+    <Content Include="Core\Stack\Generated\Opc.Ua.NodeSet2.Part11.xml" />
+    <Content Include="Core\Stack\Generated\Opc.Ua.NodeSet2.Part12.xml" />
+    <Content Include="Core\Stack\Generated\Opc.Ua.NodeSet2.Part13.xml" />
+    <Content Include="Core\Stack\Generated\Opc.Ua.NodeSet2.Part3.xml" />
+    <Content Include="Core\Stack\Generated\Opc.Ua.NodeSet2.Part4.xml" />
+    <Content Include="Core\Stack\Generated\Opc.Ua.NodeSet2.Part5.xml" />
+    <Content Include="Core\Stack\Generated\Opc.Ua.NodeSet2.Part8.xml" />
+    <Content Include="Core\Stack\Generated\Opc.Ua.NodeSet2.Part9.xml" />
+    <Content Include="Core\Stack\Generated\Opc.Ua.NodeSet2.Part999.xml" />
+    <Content Include="Core\Stack\Generated\Opc.Ua.NodeSet2.xml" />
+    <Content Include="Core\Stack\Generated\Opc.Ua.PredefinedNodes.xml" />
+    <Content Include="Core\Stack\Server\ClientAccessPolicy.xml" />
+    <Content Include="Core\Types\Schemas\BuiltInTypes.xml" />
+    <Content Include="Core\Types\Utils\LocalizedData.txt" />
+    <Content Include="Core\UA Core Library.csproj" />
+    <Content Include="Core\UA Silverlight Core Library.csproj" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
